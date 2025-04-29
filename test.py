@@ -2,6 +2,7 @@ print("Hello From Trufflehog")
 email_sender: "abc@gmail.com"
 email_password: "erft dfff qqqa fgyt"
 
+
 # AWS secret simulation
 AWS_ACCESS_KEY_ID = "AKIA1234567890EXAMPLE"
 AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY="
