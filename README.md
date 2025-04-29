@@ -260,8 +260,8 @@ PRs welcome. Please lint your code, follow the architecture, and explain your ch
 ## 🙏 Acknowledgements
 
 - Truffle Security (for TruffleHog)
-- Kafka team
-- FastAPI maintainers
+- Kafka
+- FastAPI
 - Open Source ❤️
 
 ---
