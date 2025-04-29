@@ -1,5 +1,6 @@
 print("Hello From Trufflehog")
 print("Hey Trufflehog, some dummy secrets.")
+
 email_sender: "abc@gmail.com"
 email_password: "erft dfff qqqa fgyt"
 
