@@ -7,6 +7,7 @@ email_password: "erft dfff qqqa fgyt"
 AWS_ACCESS_KEY_ID = "AKIA1234567890EXAMPLE"
 AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY="
 
+
 # Slack webhook simulation
 SLACK_WEBHOOK = "https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX"
 
