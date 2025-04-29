@@ -1,0 +1,20 @@
+print("Hello From Trufflehog")
+print("Hey Trufflehog, some dummy secrets.")
+
+email_sender: "abc@gmail.com"
+email_password: "erft dfff qqqa fgyt"
+
+# AWS secret simulation
+AWS_ACCESS_KEY_ID = "AKIA1234567890EXAMPLE"
+AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY="
+
+# Slack webhook simulation
+SLACK_WEBHOOK = "https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX"
+
+# Private key simulation
+PRIVATE_KEY = """
+-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAnlN5CAxjlvRiD2FhabwouBJEBRxFZp7y4e3wn9DTTgzGNNtN
+b+FSOX9Ak9hK5IHiI7SQeOj9teXFxBqRaN2OCx+OvOnzfCLZZtyS3wKwh+GVoDZr
+Vvv60rizCeVZxCapDWENtj846IuWWi98Z4JFNG/BslB3l9S+wqkzneAR1j6oq8Mr
+"""
