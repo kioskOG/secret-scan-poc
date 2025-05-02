@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trufflehog-consumer
+  namespace: secret-scan
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trufflehog-consumer
+  template:
+    metadata:
+      labels:
+        app: trufflehog-consumer
+    spec:
+      containers:
+      - name: consumer
+        image: jatin560/trufflehog-consumer:v1
+        envFrom:
+        - secretRef:
+            name: consumer-secrets
