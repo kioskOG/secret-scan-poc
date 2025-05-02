@@ -65,7 +65,7 @@ def consumer_group():
     try:
         consumer = KafkaConsumer(
             'secrets.scan.results',
-            bootstrap_servers=['<instance_public_ip>:9092'],
+            bootstrap_servers=['<update_broker_address>:9092'],
             auto_offset_reset='earliest',
             enable_auto_commit=True,
             group_id='secrets-consumer-group',
