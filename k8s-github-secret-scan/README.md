@@ -124,10 +124,3 @@ Access: [http://localhost:8001](http://localhost:8001)
 
 ---
 
-## 📌 Next Steps
-
-- Add Slack/email alerting via webhook
-- Scan commits in real-time via TruffleHog
-- Integrate CI/CD for auto-scaling and deployment
-- Add Helm charts for full Helm-based deployment
-
