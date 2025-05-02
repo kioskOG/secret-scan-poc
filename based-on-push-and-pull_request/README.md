@@ -89,7 +89,7 @@ Edit `docker-compose.yml` with your EC2 IP (for advertised listeners).
 
 ```bash
 cd kafka
-docker compose up -d
+docker-compose up -d
 ```
 
 ### 3. 🛠 Create Kafka Topic
