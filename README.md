@@ -88,6 +88,7 @@ cd secret-scan-poc
 Edit `docker-compose.yml` with your EC2 IP (for advertised listeners).
 
 ```bash
+cd kafka
 docker-compose up -d
 ```
 
@@ -107,6 +108,7 @@ kafka-topics --list --bootstrap-server kafka:9092
 ### 4. Install Python Dependencies
 
 ```bash
+cd ../
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -226,10 +228,10 @@ Push the file and see TruffleHog + Kafka + Email in action!
 ---
 ### ⚡ Should You Integrate TruffleHog into GitHub Actions Instead of Your Own Code?
 
-Option | Pros | Cons
-TruffleHog in GitHub Actions | ✅ Very easy to set up✅ No server management✅ Direct scan on PRs/Pushes✅ GitHub-native logs and alerts | ❌ Can't easily integrate with Kafka (unless you code a custom GitHub action or webhook output)❌ Limited customization of post-processing (like customized Kafka message, complex flows)
-TruffleHog from Your Own Webhook Server | ✅ Full flexibility: scan, push to Kafka, custom alerting✅ One place to control workflow✅ Can scale later easily (multiple repos, central dashboard) | ❌ More infra to manage (webhook server, background workers)
-
+| Option | Pros | Cons |
+|---|---|---|
+| TruffleHog in GitHub Actions | ✅ Very easy to set up<br>✅ No server management<br>✅ Direct scan on PRs/Pushes<br>✅ GitHub-native logs and alerts | ❌ Can't easily integrate with Kafka (unless you code a custom GitHub action or webhook output)<br>❌ Limited customization of post-processing (like customized Kafka message, complex flows) |
+| TruffleHog from Your Own Webhook Server | ✅ Full flexibility: scan, push to Kafka, custom alerting<br>✅ One place to control workflow<br>✅ Can scale later easily (multiple repos, central dashboard) | ❌ More infra to manage (webhook server, background workers) |
 
 
 > 🎯 My Honest Suggestion
