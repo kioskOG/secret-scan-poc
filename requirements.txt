@@ -1,4 +1,4 @@
 fastapi
 uvicorn
 kafka-python
-trufflehog3
+# trufflehog3

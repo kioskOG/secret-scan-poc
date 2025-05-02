@@ -10,7 +10,7 @@ import logging  # Added for more robust logging
 # Initialize Kafka producer globally
 try:
     producer = KafkaProducer(
-        bootstrap_servers=['<instance_public_ip>:9092'],  # Or use your Kafka broker address
+        bootstrap_servers=['13.234.114.162:9092'],  # Or use your Kafka broker address
         value_serializer=lambda v: json.dumps(v).encode('utf-8')
     )
 except Exception as e:
@@ -31,6 +31,9 @@ async def github_webhook(request: Request):
         payload = await request.json()
         logging.info("✅ Received Webhook Event:")
         logging.info(json.dumps(payload, indent=2))
+
+        event_type = request.headers.get("X-GitHub-Event", "")
+        print(event_type)
 
         # Extract repository clone URL and commit SHA
         repo_url = payload['repository']['clone_url']

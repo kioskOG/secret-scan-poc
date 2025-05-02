@@ -117,7 +117,7 @@ pip install -r requirements.txt
 ### 5. Start FastAPI Webhook Listener
 
 ```bash
-uvicorn webhook_listener:app --reload --host 0.0.0.0 --port 8000
+uvicorn webhook_listner:app --reload --host 0.0.0.0 --port 8000
 ```
 
 ### 6. Setup GitHub Webhook
