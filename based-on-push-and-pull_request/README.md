@@ -123,3 +123,76 @@ make kafka-ui-port-forward
 Access: [http://localhost:8001](http://localhost:8001)
 
 ---
+
+
+## ✅ GitHub Repository Changes for Secret Gatekeeper
+
+### 1. 🔒 Enable Branch Protection Rules
+
+Navigate to:
+`Settings → Branches → Branch protection rules → Add rule`
+
+**Rule Configuration:**
+
+| Setting                                     | Value                    |
+| ------------------------------------------- | ------------------------ |
+| **Branch name pattern**                     | `main` (or your default) |
+| ✅ Require pull request reviews before merge | ✔️                       |
+| ✅ Require status checks to pass             | ✔️                       |
+| ✅ Require branches to be up to date         | ✔️                       |
+| ✅ Require conversation resolution           | ✔️ *(optional)*          |
+| ✅ Status checks that must pass              | `secret-scan`            |
+| ✅ Include administrators                    | ✔️ *(recommended)*       |
+
+---
+
+### 2. 🪝 Configure GitHub Webhook
+
+Navigate to:
+`Settings → Webhooks → Add webhook`
+
+**Webhook Settings:**
+
+| Field            | Value                                      |
+| ---------------- | ------------------------------------------ |
+| **Payload URL**  | `http://<your-public-webhook-url>/webhook` |
+| **Content type** | `application/json`                         |
+| **Secret**       | Must match `GITHUB_SECRET` used in FastAPI |
+| **Events**       | ✅ `push` and ✅ `pull_request`              |
+| **SSL verify**   | Enabled (or disabled for local testing)    |
+
+---
+
+### 3. 🔑 GitHub Personal Access Token (PAT)
+
+Create a token with these **scopes**:
+
+* `repo:status`
+* `repo` (for private repos) or `public_repo` (for public repos)
+
+**Then set as environment variables:**
+
+```bash
+export GITHUB_TOKEN=<your_token>
+export GITHUB_USER=<your_github_username>
+```
+
+---
+
+### 4. 📂 (Optional) Kubernetes Secret for GitHub Credentials
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: github-secret
+  namespace: secret-scan
+stringData:
+  GITHUB_TOKEN: "<your_token>"
+  GITHUB_USER: "<your_username>"
+  GITHUB_SECRET: "<webhook_secret>"
+```
+
+---
+
+✅ After applying the above setup, your GitHub PRs will be blocked from merging until the webhook verifies the PR is free from secrets using TruffleHog + Kafka pipeline.
