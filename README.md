@@ -71,7 +71,7 @@ Step | Task | Goal
 
 ## ⚙️ Setup Instructions
 
-{: .note}
+> [!NOTE]
 > I have used thr trufflehog binary in this case, if you want you can use trufflehog version 3 python library as well.
 > Install trufflehog using installation script
 > https://github.com/trufflesecurity/trufflehog
@@ -144,7 +144,7 @@ Click Add Webhook.
 
 ✅ GitHub will immediately ping your server and expect a 200 OK response.
 
-{: .note}
+> [!NOTE]
 > make sure your fastapi is running
 
 
